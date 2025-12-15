@@ -27,20 +27,58 @@ The next flip-flop need only “recognize” that the first flip-flop’s Q outp
 However, the remaining flip-flops should be made ready to toggle only when all lower-order output bits are “high,” thus the need for AND gates.
 
 **Procedure**
+1.Open Quartus Prime software.
+2. Create a new project using New Project Wizard.
+3. Select Empty Project and choose device.
+4. Create a new Verilog HDL file.
+5. Write the up counter and dowm counter code.
+6. Save file and set as top-level entity.
+7. Compile the project to verify errors.
+8. Observe output using RTL Viewer / Simulation.
 
-/* write all the steps invloved */
+
 
 **PROGRAM**
+UP COUNTER
+module expp6(out,clk,rst);
+input clk,rst;
+output reg [3:0]out;
+always @ (posedge clk)
+begin
+   if(rst)
+     out<=0;
+   else 
+     out <= out+1;
+end
+endmodule
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
+DOWN COUNTER
+module exp6(out,clk,rst);
+input clk,rst;
+output reg [3:0]out;
+always @ (posedge clk)
+begin
+   if(rst)
+     out<=0;
+   else 
+     out <= out-1;
+end
+endmodule
 
-Developed by: RegisterNumber:
-*/
+
+Developed by:Akshaya Sree G RegisterNumber:25018408
+
 
 **RTL LOGIC UP COUNTER**
+<img width="1920" height="1020" alt="exp6 de" src="https://github.com/user-attachments/assets/4c6f69ff-99dc-4df8-8ad2-f4b1d73504b1" />
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/9a3505cc-25d8-41f4-a05a-7297be94a776" />
 
 **TIMING DIAGRAM FOR IP COUNTER**
+<img width="1920" height="1020" alt="exp 6 1 de" src="https://github.com/user-attachments/assets/5790d1c8-133a-4f02-854f-614502061bac" />
+<img width="1920" height="1020" alt="Screenshot 2025-12-15 132925" src="https://github.com/user-attachments/assets/f1d8ca9a-9c3f-4b11-b986-481577f5b96a" />
 
 **TRUTH TABLE**
+<img width="673" height="719" alt="image" src="https://github.com/user-attachments/assets/1bfb0873-f4e7-4262-91d3-b64e68914d7c" />
 
 **RESULTS**
+ Thus 4 bit synchronous up counter and validate functionality is verified.
